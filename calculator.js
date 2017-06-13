@@ -1,6 +1,9 @@
-//get values from form
+//get values from form -start by targeting input boxes
 let numberInput = document.getElementById("num1");
 let numberInput2 = document.getElementById("num2");
+
+//target DOM output div
+let outputDiv= document.getElementById("output");
 
 //targets for event listeners on buttons
 let add= document.getElementById("add");
@@ -31,25 +34,29 @@ numberInput2.addEventListener("change", function(){
 	console.log ("userInput2",userInput2);
 })
 
-//event listeners for each button
+//event listeners for each button including print to div
 add.addEventListener("click", function(){
 	let newSum = operation(userInput, userInput2, sum);
 	console.log ("newSum",newSum);
+	outputDiv.innerHTML = `${newSum}`;
 });
 
 sub.addEventListener("click", function(){
 	 let newSub = operation(userInput, userInput2, subtract);
 	 console.log ("newSub", newSub);
+	 outputDiv.innerHTML = `${newSub}`;
 });
 
 mult.addEventListener("click", function(){
 	let newMult = operation(userInput, userInput2, multiply);
 	console.log ("newMult",newMult);
+	outputDiv.innerHTML = `${newMult}`;
 });
 
 divide.addEventListener("click", function(){
 	let newDivi = operation(userInput, userInput2, divi);
 	console.log ("newDivi", newDivi);
+	outputDiv.innerHTML = `${newDivi}`;
 });
 
 /*
